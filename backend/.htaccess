@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Cairn Backend"
-AuthUserFile "/home/lfred/.htpasswds/public_html/cairn/backend/passwd"
-require valid-user
