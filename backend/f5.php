@@ -23,6 +23,7 @@ function update($title,$co,$file) {
 	if ($title && $content) {
 		file_put_contents(("../" . strtolower($title) . ".html"), $render);
 		file_put_contents($file, $co);
+		return $content;
 	}
 	else {
 		die("Request not complete.");

@@ -15,7 +15,7 @@
 				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . rawurlencode($name). '" class="page button">' . $name . '</button></form>';
 			}
 			elseif ($refresh==true) {
-				$nav = $nav . '<li><a href="./'.rawurlencode($name).'" class="page">' . $name . '</a></li>';
+				$nav = $nav . '<li><a href="./'.rawurlencode(strtolower($name)).'" class="page">' . $name . '</a></li>';
 			}
 			else {
 				echo '<li><a href="../'.rawurlencode($name).'" class="page">' . $name . '</a></li>';

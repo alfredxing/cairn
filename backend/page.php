@@ -13,7 +13,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	<div id="frame">
 		<section id="edit">
 			<?php
-			
+
 			include("f5.php");
 
 			$titlebefore = $_POST["titlebefore"];
@@ -56,8 +56,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 					unlink("../" . urldecode(strtolower($titlebefore)) . ".html");
 					unlink("../meta/pages/" . urldecode(strtolower($titlebefore)) . ".txt");
 				}
-				update($title,$content,("../meta/pages/" . strtolower($title) . ".txt"));
-				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . $content . "</p></blockquote>";
+				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . update($title,$content,("../meta/pages/" . strtolower($title) . ".txt")) . "</p></blockquote>";
 				/* file_put_contents(("../" . strtolower($title) . ".html"), $render);
 				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_POST["content"]); */
 			} else {
