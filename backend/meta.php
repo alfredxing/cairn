@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <?php
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
-$name = $_GET["name"];
 ?>
 <html>
 <head>
 	<title>Backend - <?php echo $json['name']; ?></title>
-	<link rel="stylesheet" href="css/core.min.css" type="text/css">
+	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<a href="./" title="Dashboard"><span id="logo"><?php echo $name ?></span></a>
-		<nav>
-			<ul>
-				<li><a href="./#pages">Pages</a></li>
-				<li><a href="./#new">New</a></li>
-				<li><a href="./#meta">Settings</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php include "./sidebar.php" ?>
 	<div id="frame">
 		<section id="edit">
 			<?php
-			$name = $_GET["name"];
-			$keywords = $_GET["keywords"];
-			$description = $_GET["description"];
+			$name = $_POST["name"];
+			$keywords = $_POST["keywords"];
+			$description = $_POST["description"];
 			if ($name) {
 				$json = '{"name":"'.$name.'","keywords":"'.$keywords.'","description":"'.$description.'"}';
 				file_put_contents(("../meta/meta.txt"), $json);
@@ -39,7 +29,7 @@ $name = $_GET["name"];
 					foreach ($tags as &$tag) {
 						$tag = '<span class="button tag">' . $tag . '</span>';
 					}
-					echo "<span style='display:block;margin-top:-30px;'></span><p>You've said that the words \"&nbsp;" . implode(' , ', $tags) . "&nbsp;\" describe your site.</p>";
+					echo "<span style='display:block;margin-top:-30px;'></span><p>You've said that the words " . implode(' , ', $tags) . " describe your site.</p>";
 				}
 				if ($keywords) {
 					echo "<p>And you've told us that your site is about \"" . $description . "\"</p>";
