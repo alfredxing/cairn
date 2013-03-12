@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-$page = $_GET["page"];
+$page = $_POST["page"];
 function gc($name) {
-	return file_get_contents("../meta/pages/".strtolower($name).".txt");
+	return file_get_contents("../meta/pages/".strtolower(urldecode($name)).".txt");
 }
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 ?>
@@ -25,10 +25,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	</header>
 	<div id="frame">
 		<section id="edit">
-			<h1>Editing: <?php echo $page; ?></h1>
-			<form id="compose" action="page.php" method="GET">
-				<input type="hidden" name="titlebefore" value='<?php echo ucfirst($page); ?>'/>
-				<input type="text" placeholder="Name your page." name="title" id="title" value='<?php echo ucfirst($page); ?>'>
+			<h1>Editing: <?php echo urldecode($page); ?></h1>
+			<form id="compose" action="page.php" method="POST">
+				<input type="hidden" name="titlebefore" value='<?php echo $page; ?>'/>
+				<input type="text" placeholder="Name your page." name="title" id="title" value="<?php echo ucfirst(htmlentities(urldecode($page))); ?>">
 				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."><?php echo gc($page); ?></textarea>
 				<button type="submit" id="publish" class="button">Publish</button>
 				<button name="delete" value="Delete" class="button delete" type="submit">Delete</button>

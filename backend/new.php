@@ -21,7 +21,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	</header>
 	<div id="frame">
 		<section id="new">
-			<form id="compose" action="page.php" method="GET">
+			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="title" name="title" id="title" />
 				<textarea name="content" id="content" cols="30" rows="10" placeholder="Whatever you want to say."></textarea>
 				<button type="submit" value="Publish!" />

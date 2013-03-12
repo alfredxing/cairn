@@ -1,6 +1,6 @@
 <?php
-$title = strtolower($_GET["title"]);
-$content = $_GET["content"];
+$title = strtolower($_POST["title"]);
+$content = $_POST["content"];
 date_default_timezone_set("America/Vancouver");
 $time = getdate();
 $ftime = date('H:i',strtotime("$time[hours]:$time[minutes]"));

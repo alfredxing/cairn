@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
-$name = $_GET["name"];
+$name = $_POST["name"];
+echo $name;
 ?>
 <html>
 <head>
@@ -23,9 +24,9 @@ $name = $_GET["name"];
 	<div id="frame">
 		<section id="edit">
 			<?php
-			$name = $_GET["name"];
-			$keywords = $_GET["keywords"];
-			$description = $_GET["description"];
+			$name = $_POST["name"];
+			$keywords = $_POST["keywords"];
+			$description = $_POST["description"];
 			if ($name) {
 				$json = '{"name":"'.$name.'","keywords":"'.$keywords.'","description":"'.$description.'"}';
 				file_put_contents(("../meta/meta.txt"), $json);
