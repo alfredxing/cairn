@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+<?php
+$json = json_decode(file_get_contents("../meta/meta.txt"), true);
+?>
 <html>
 <head>
-	<title>Dashboard: The Backend - Cairn</title>
+	<title>Backend - <?php echo $json['name']; ?></title>
 	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
