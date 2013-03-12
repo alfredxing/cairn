@@ -7,9 +7,9 @@ $meta = json_decode(file_get_contents("../meta/meta.txt"), true);
 function update($title,$co,$file) {
 	$content = $co;
 
-	$content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
+	/* $content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
 	$content = preg_replace('/(\n){2,}/',"</p><p>",$content);
-	$content = preg_replace('#\n(\w)#', '<br>\1', $content);
+	$content = preg_replace('#\n(\w)#', '<br>\1', $content); */
 
 	$before = file_get_contents("../theme/before.html") . "\n<p>";
 	$after = "</p>\n" . file_get_contents("../theme/after.html");
@@ -37,6 +37,7 @@ function fnamen($name) {
 
 function rall() {
 	$pages = glob('../meta/pages/*.txt');
+	g();
 	foreach ($pages as $i) {
 		$file = $i;
 		$name = fnamen($i);

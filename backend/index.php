@@ -13,14 +13,17 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	<div id="frame">
 		<section id="pages">
 			<h1>Your pages:</h1>
-			<?php $gedit=true; include('glob.php'); ?>
+			<ul><?php $gedit=true; include('glob.php'); g(); ?></ul>
 		</section>
 		<section id="new">
 			<h1>Want to create a new one?</h1>
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
 				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."></textarea>
-				<button type="submit" id="publish" class="button">Publish!</button>
+				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
+				<br>
+				<button id="parse" class="button">Preview</button>
+				<button type="submit" id="publish" class="button">Publish</button>
 			</form>
 		</section>
 		<section id="meta">
@@ -38,5 +41,17 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		</section>
 		<div id="clear"></div>
 	</div>
+	<script src="js/vendor/md.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById('content').oninput = function() {
+			document.getElementById('preview').innerHTML = marked(this.value);
+		};
+		document.getElementById('compose').onsubmit = function() {
+			var content = document.getElementById('content');
+			content.value = marked(content.value);
+		};
+	};
+	</script>
 </body>
 </html>

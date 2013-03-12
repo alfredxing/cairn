@@ -1,26 +1,26 @@
-<ul>
-	<?php
-	function fname($name) {
-		$n = ucfirst(str_replace(".html","",substr($name,3)));
-		return (string)$n;
-	};
+<?php
+function fname($name) {
+	$n = ucfirst(str_replace(".html","",substr($name,3)));
+	return (string)$n;
+};
+$nav = '';
+function g() {
 	$pages = glob('../*.htm*');
-	$nav = '';
 	if (!$pages && !$refresh) {
 		echo 'You don\'t have any pages. Why not get started below?';
 	} else {
 		foreach ($pages as $i) {
 			$name = fname($i);
-			if ($gedit==true) {
+			if ($GLOBALS['gedit']==true) {
 				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . rawurlencode($name). '" class="page button">' . $name . '</button></form>';
 			}
-			elseif ($refresh==true) {
-				$nav = $nav . '<li><a href="./'.rawurlencode(strtolower($name)).'" class="page">' . $name . '</a></li>';
+			elseif ($GLOBALS['refresh']==true) {
+				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.rawurlencode(strtolower($name)).'" class="page">' . $name . '</a></li>';
 			}
 			else {
 				echo '<li><a href="../'.rawurlencode($name).'" class="page">' . $name . '</a></li>';
 			}
 		}
 	}
-	?>
-</ul>
+}
+?>
