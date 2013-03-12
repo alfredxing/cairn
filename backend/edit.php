@@ -13,7 +13,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<?php include "./sidebar.php" ?>
+	<?php include "./sidebar.php"; ?>
 	<div id="frame">
 		<section id="edit">
 			<h1>Editing: <?php echo urldecode($page); ?></h1>
