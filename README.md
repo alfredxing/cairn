@@ -22,7 +22,11 @@ Installation
 Just get all the files, upload them, and password protect the `/backend` directory with `.htaccess` and `.htpasswd`.
 No databases!
 
+Create the directory `/meta/pages`
+
 Start making pages by logging in to `/backend`.
+
+[Detailed instructions](https://github.com/alfredxing/cairn/wiki/Installation-&-Setup)
 
 Meta
 ----
