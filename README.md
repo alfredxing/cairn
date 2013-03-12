@@ -23,3 +23,8 @@ Just get all the files, upload them, and password protect the `/backend` directo
 No databases!
 
 Start making pages by logging in to `/backend`.
+
+Meta
+----
+
+This software is licensed according to the [LICENSE.md][https://raw.github.com/alfredxing/cairn/master/LICENSE.md] file.
