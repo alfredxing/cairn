@@ -31,6 +31,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<textarea name="description" placeholder="Description"><?php echo $json['description']; ?></textarea>
 				<button type="submit" class="button">Save your stuff.</button>
 			</form>
+			<br>
+			<h1>Refresh your pages.</h1>
+			<p>Refresh your pages to make sure they all have the latest template and navigation.</p>
+			<a href="refresh.php" class="button">Refresh now</a>
 		</section>
 		<div id="clear"></div>
 	</div>
