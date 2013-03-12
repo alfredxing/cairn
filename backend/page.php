@@ -37,18 +37,16 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			$after = "</p>\n" . file_get_contents("../theme/after.html");
 			$render = $before . $content . $after;
 
-<<<<<<< HEAD
 			$render = str_replace("[site]",$meta['name'],$render);
 			$render = str_replace("[title]",$title,$render);
 			$render = str_replace("[keywords]",$meta["keywords"],$render);
-=======
-		$nav = include('glob.php');
 
-		$render = str_replace("[site]",$meta['name'],$render);
-		$render = str_replace("[title]",$title,$render);
-		$render = str_replace("[keywords]",$meta["keywords"],$render);
-		$render = str_replace("[nav]",$nav,$render);
->>>>>>> Adding more functions
+			$nav = include('glob.php');
+
+			$render = str_replace("[site]",$meta['name'],$render);
+			$render = str_replace("[title]",$title,$render);
+			$render = str_replace("[keywords]",$meta["keywords"],$render);
+			$render = str_replace("[nav]",$nav,$render);
 
 			if ($delete && !$confirmed) {
 				echo "<form action='page.php' method='get'>
