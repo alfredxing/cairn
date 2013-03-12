@@ -3,7 +3,6 @@
 #################
 
 *.html
-meta/pages/
 meta/pages/*.txt
 
 
