@@ -5,7 +5,7 @@ Introduction
 ------------
 
 A CMS that's like no other. Generates static HTML files to serve quickly and efficiently.
-With an administration area (that's right). It's also themeable.
+With an administration area (that's right). Oh, it's also themeable.
 
 **At under 10KB zipped, it doesn't need an explanation.**
 
