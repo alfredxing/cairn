@@ -31,6 +31,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<input type="text" placeholder="Name your page." name="title" id="title" value='<?php echo ucfirst($page); ?>'>
 				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."><?php echo gc($page); ?></textarea>
 				<button type="submit" id="publish" class="button">Publish</button>
+				<a href='../<?php echo $page; ?>' class="button">Visit page</a>
 				<button name="delete" value="Delete" class="button delete" type="submit">Delete</button>
 			</form>
 		</section>
