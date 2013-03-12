@@ -5,20 +5,11 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 <html>
 <head>
 	<title>Backend - <?php echo $json['name']; ?></title>
-	<link rel="stylesheet" href="css/core.min.css" type="text/css">
+	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<a href="./" title="Dashboard"><span id="logo"><?php echo $json['name']; ?></span></a>
-		<nav>
-			<ul>
-				<li><a href="./#pages">Pages</a></li>
-				<li><a href="./#new">New</a></li>
-				<li><a href="./#meta">Settings</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php include "./sidebar.php" ?>
 	<div id="frame">
 		<section id="edit">
 			<?php
@@ -72,7 +63,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<p>
 				<?php 
 				if (!$delete) {
-					echo "<a href='../" . strtolower($title) . "' class='button'>Visit the page</a>&nbsp;&nbsp;";
+					echo "<a href='../" . urlencode(strtolower($title)) . "' class='button'>Visit the page</a>&nbsp;&nbsp;";
 				}
 				if ($confirmed || !$delete) {
 					echo "<a href=\"./\" class=\"button\">Back to the dash</a>";
