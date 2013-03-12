@@ -12,7 +12,7 @@ With an administration area (that's right). Oh, and it's also themeable.
 Screenshot
 ----------
 
-![Backend dashboard](http://iweb.lfred.info/cairn/backend.png "Backend dashboard")
+![Backend dashboard](http://iweb.lfred.info/cairn/dash.png "Backend dashboard")
 
 ![Editing a page](http://iweb.lfred.info/cairn/edit.png "Editing a page")
 
