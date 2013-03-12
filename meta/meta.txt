@@ -1,1 +1,1 @@
-{"name":"Cairn","keywords":"Cairn,CMS,flat-file,small,fast,static,generate,HTML","description":"Don't be no cloud on a sunny day!"}
+{"name":"Minnesota","keywords":"Sticky Bun, No Worries, Yessir, Chill Winston","description":"Don't be no cloud on a sunny day!"}
