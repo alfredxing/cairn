@@ -5,29 +5,20 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 <html>
 <head>
 	<title>Backend - <?php echo $json['name']; ?></title>
-	<link rel="stylesheet" href="css/core.min.css" type="text/css">
+	<link rel="stylesheet" href="css/core.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<header>
-		<a href="./" title="Dashboard"><span id="logo"><?php echo $json['name']; ?></span></a>
-		<nav>
-			<ul>
-				<li><a href="./#pages">Pages</a></li>
-				<li><a href="./#new">New</a></li>
-				<li><a href="./#meta">Settings</a></li>
-			</ul>
-		</nav>
-	</header>
+	<?php include "./sidebar.php" ?>
 	<div id="frame">
 		<section id="edit">
 			<?php
-			$title = $_GET["title"];
-			$titlebefore = $_GET["titlebefore"];
+			$title = $_POST["title"];
+			$titlebefore = $_POST["titlebefore"];
 			$meta = json_decode(file_get_contents("../meta/meta.txt"), true);
-			$content = $_GET["content"];
-			$delete = $_GET["delete"];
-			$confirmed = $_GET["confirmed"];
+			$content = $_POST["content"];
+			$delete = $_POST["delete"];
+			$confirmed = $_POST["confirmed"];
 
 			$content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
 			$content = preg_replace('/(\n){2,}/',"</p><p>",$content);
@@ -41,37 +32,30 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			$render = str_replace("[title]",$title,$render);
 			$render = str_replace("[keywords]",$meta["keywords"],$render);
 
-			$nav = include('glob.php');
-
-			$render = str_replace("[site]",$meta['name'],$render);
-			$render = str_replace("[title]",$title,$render);
-			$render = str_replace("[keywords]",$meta["keywords"],$render);
-			$render = str_replace("[nav]",$nav,$render);
-
 			if ($delete && !$confirmed) {
-				echo "<form action='page.php' method='get'>
-				<input type='hidden' name='title' value='" . $title . "' />
-				<input type='hidden' name='content' value='" . $content . "' />
+				echo "<form action='page.php' method='POST'>
+				<input type='hidden' name='title' value='" . $titlebefore . "' />
+				<input type='hidden' name='content' value='" . urlencode($content) . "' />
 				<input type='hidden' name='delete' value='" . $delete . "' />
 				<input type='hidden' name='confirmed' value='TRUE' />
-				<h1>Are you sure you want to delete&nbsp;'" . $title . "'?</h1>
+				<h1>Are you sure you want to delete&nbsp;'" . urldecode($title) . "'?</h1>
 				<button type='submit' class='button delete'>Yes, I won't regret it</button>
 				&nbsp;&nbsp;
 				<a href='./' class='button'>Nevermind</a></form>";
 			} else if ($delete && $confirmed) {
-				echo "<h1>You told us to delete this page:</h1><br><blockquote><h2>" . $title . ".</h2>
-				<p>" . $content . "</p></blockquote>
+				echo "<h1>You told us to delete this page:</h1><br><blockquote><h2>" . urldecode(urldecode($title)) . ".</h2>
+				<p>" . urldecode($content) . "</p></blockquote>
 				<h2>And we did.</h2><br>";
-				unlink("../" . strtolower($title) . ".html");
-				unlink("../meta/pages/" . strtolower($title) . ".txt");
+				unlink("../" . urldecode(urldecode(strtolower($title))) . ".html");
+				unlink("../meta/pages/" . urldecode(urldecode(strtolower($title))) . ".txt");
 			} else if ($title && $content) {
 				if ($titlebefore && $title !== $titlebefore) {
-					unlink("../" . strtolower($titlebefore) . ".html");
-					unlink("../meta/pages/" . strtolower($titlebefore) . ".txt");
+					unlink("../" . urldecode(strtolower($titlebefore)) . ".html");
+					unlink("../meta/pages/" . urldecode(strtolower($titlebefore)) . ".txt");
 				}
 				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . $content . "</p></blockquote>";
 				file_put_contents(("../" . strtolower($title) . ".html"), $render);
-				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_GET["content"]);
+				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_POST["content"]);
 			} else {
 				echo "Request not complete.";
 			}
@@ -79,7 +63,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<p>
 				<?php 
 				if (!$delete) {
-					echo "<a href='../" . strtolower($title) . "' class='button'>Visit the page</a>&nbsp;&nbsp;";
+					echo "<a href='../" . urlencode(strtolower($title)) . "' class='button'>Visit the page</a>&nbsp;&nbsp;";
 				}
 				if ($confirmed || !$delete) {
 					echo "<a href=\"./\" class=\"button\">Back to the dash</a>";

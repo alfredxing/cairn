@@ -152,7 +152,7 @@ nav a {
 }
 
 #frame {
-	padding: 0 50px;
+	padding-left: 50px;
 	max-height: 100%;
 	overflow: auto;
 }
@@ -173,6 +173,10 @@ section {
 	float: none;
 }
 
+#pages ul form {
+	display: inline-block;
+}
+
 .button {
 	display: inline-block;
 	background: #555;
@@ -189,10 +193,6 @@ section {
 	user-select: none;
 }
 
-.button:before {
-	display: none;
-}
-
 .button:hover {
 	background: #333;
 }
@@ -205,6 +205,8 @@ section {
 	margin-right: 10px;
 	height: 100px;
 	font-size: 1em;
+	position: relative;
+	display: inline-block;
 }
 
 .page > li {
@@ -213,19 +215,21 @@ section {
 	text-align: center;
 }
 
-.page:before {
+.page:after {
 	content: '';
 	height: 0;
 	position: absolute;
 	width: 0;
-	border: 10px solid #FCFDFE;
+	top: 0;
+	left: 0;
+	border: 10px solid #FAFBFC;
 	border-right-color: #333;
 	border-bottom-color: #333;
 	border-bottom-right-radius: 3px;
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.3), 1px 1px #000;
 }
 
-.page:hover:before {
+.page:hover:after {
 	border-right-color: #111;
 	border-bottom-color: #111;
 }
