@@ -5,13 +5,17 @@
 		return (string)$n;
 	};
 	$pages = glob('../*.htm*');
-	foreach ($pages as $i) {
-		$name = fname($i);
-		if ($gedit==true) {
-			echo '<a href="./edit.php?page='.strtolower($name).'" class="page" target="_blank"><li class="button">' . $name . '</li></a>';
-		}
-		else {
-			echo '<li><a href="../'.strtolower($name).'" class="page" target="_blank">' . $name . '</a></li>';
+	if (!$pages) {
+		echo 'You don\'t have any pages. Why not get started below?';
+	} else {
+		foreach ($pages as $i) {
+			$name = fname($i);
+			if ($gedit==true) {
+				echo '<a href="./edit.php?page='.strtolower($name).'" class="page"><li class="button page">' . $name . '</li></a>';
+			}
+			else {
+				echo '<li><a href="../'.strtolower($name).'" class="page">' . $name . '</a></li>';
+			}
 		}
 	}
 	?>
