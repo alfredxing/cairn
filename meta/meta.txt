@@ -1,1 +1,1 @@
-{"name":"Cairn","keywords":"cairn,CMS,simple,flat,generate,html,static,different","description":"Cairn is a CMS different from any other. Instead of grabbing content from a database every time a page or post is visited, Cairn generates static HTML pages so content loads much faster than before."}
+{"name":"Minnesota","keywords":"Yessir, Sticky bun come soon, Chill Winston","description":"Don't be no cloud on a sunny day!"}
