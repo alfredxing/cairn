@@ -5,16 +5,16 @@ Introduction
 ------------
 
 A CMS that's like no other. Generates static HTML files to serve quickly and efficiently.
-With an administration area (that's right). Oh, it's also themeable.
+With an administration area (that's right). Oh, and it's also themeable.
 
 **At just over 10KB zipped, it doesn't need an explanation.**
 
 Screenshot
 ----------
 
-There's only one right now, but more are coming soon.
-
 ![Backend dashboard](http://iweb.lfred.info/cairn/backend.png "Backend dashboard")
+
+![Editing a page](http://iweb.lfred.info/cairn/edit.png "Editing a page")
 
 Installation
 ------------
