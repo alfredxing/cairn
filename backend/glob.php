@@ -6,7 +6,7 @@
 	};
 	$pages = glob('../*.htm*');
 	$nav = '';
-	if (!$pages) {
+	if (!$pages && !$refresh) {
 		echo 'You don\'t have any pages. Why not get started below?';
 	} else {
 		foreach ($pages as $i) {

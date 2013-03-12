@@ -13,14 +13,17 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	<div id="frame">
 		<section id="edit">
 			<?php
-			$title = $_POST["title"];
+			
+			include("f5.php");
+
 			$titlebefore = $_POST["titlebefore"];
+			$title = $_POST["title"];
 			$meta = json_decode(file_get_contents("../meta/meta.txt"), true);
 			$content = $_POST["content"];
 			$delete = $_POST["delete"];
 			$confirmed = $_POST["confirmed"];
 
-			$content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
+			/*$content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
 			$content = preg_replace('/(\n){2,}/',"</p><p>",$content);
 			$content = preg_replace('#\n(\w)#', '<br>\1', $content);
 
@@ -30,7 +33,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 
 			$render = str_replace("[site]",$meta['name'],$render);
 			$render = str_replace("[title]",$title,$render);
-			$render = str_replace("[keywords]",$meta["keywords"],$render);
+			$render = str_replace("[keywords]",$meta["keywords"],$render); */
 
 			if ($delete && !$confirmed) {
 				echo "<form action='page.php' method='POST'>
@@ -53,12 +56,16 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 					unlink("../" . urldecode(strtolower($titlebefore)) . ".html");
 					unlink("../meta/pages/" . urldecode(strtolower($titlebefore)) . ".txt");
 				}
+				update($title,$content,("../meta/pages/" . strtolower($title) . ".txt"));
 				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . $content . "</p></blockquote>";
-				file_put_contents(("../" . strtolower($title) . ".html"), $render);
-				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_POST["content"]);
+				/* file_put_contents(("../" . strtolower($title) . ".html"), $render);
+				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_POST["content"]); */
 			} else {
 				echo "Request not complete.";
 			}
+
+			rall();
+
 			?>
 			<p>
 				<?php 
