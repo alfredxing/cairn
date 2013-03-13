@@ -19,7 +19,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<h1>Want to create a new one?</h1>
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
-				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say.  Format in Markdown."></textarea>
+				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. Markdown and HTML are both okay."></textarea>
 				<textarea name="content" id="html" style="display:none;"></textarea>
 				<p><strong>Preview:</strong></p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
