@@ -1,7 +1,7 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RewriteBase /cairn/
+RewriteBase /
  
 # Remove trailing slashes.
 # e.g. example.com/foo/ will redirect to example.com/foo

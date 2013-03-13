@@ -4,3 +4,19 @@ body {
 	overflow-x: hidden;
 	font-family: "Lato","Helvetica","Segoe UI",sans-serif;
 }
+nav {
+	position: fixed;
+	width: 150px;
+	margin-left: -150px;
+}
+nav ul {
+	margin: 1.4em 0;
+	list-style-type: none;
+}
+nav a {
+	color: #696969;
+	text-decoration: none;
+}
+nav a:hover {
+	border-bottom: 1px dashed #696969;
+}
