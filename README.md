@@ -30,6 +30,13 @@ Start making pages by logging in to `/backend`.
 
 [Detailed instructions](https://github.com/alfredxing/cairn/wiki/Installation-&-Setup)
 
+
+Contributing
+------------
+
+Everyone's welcome to contribute to Cairn. To get started, head over to our [Contibuting wiki page](https://github.com/alfredxing/cairn/wiki/Contributing).
+
+
 Meta
 ----
 
