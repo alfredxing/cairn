@@ -21,7 +21,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
 				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. Markdown and HTML are both okay."></textarea>
 				<textarea name="content" id="html" style="display:none;"></textarea>
-				<p><strong>Preview:</strong></p>
+				<p>
+					<strong>Preview:</strong>
+					<a class="help" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">?</a>
+				</p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
 				<button type="submit" id="publish" class="button">Publish</button>
@@ -32,6 +35,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<form action="meta.php" method="POST">
 				<input type="text" name="name" placeholder="Name of site" value="<?php echo $json['name']; ?>">
 				<input type="text" name="keywords" placeholder="Keywords, separated, by, commas" value="<?php echo $json['keywords'];?>">
+				<textarea name="description" placeholder="Describe your site in a short blurb"><?php echo $json['description'];?></textarea>
 				<button type="submit" class="button">Save your stuff.</button>
 			</form>
 			<br>
