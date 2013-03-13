@@ -8,7 +8,7 @@ A static site generator CMS that's like no other. Generates static HTML files to
 With an administration area (that's right). Oh, and it's also themeable.
 Cairn is also huge on usability. A great backend design. Pages in Github flavoured Mardown.
 
-**At just 15KB zipped, it doesn't need an explanation.**
+**At under 20KB zipped, it doesn't need an explanation.**
 
 Screenshots
 -----------
