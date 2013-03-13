@@ -13,9 +13,6 @@ Cairn is also huge on usability. A great backend design. Pages in Github flavour
 Screenshot
 ----------
 
-![Backend dashboard](http://iweb.lfred.info/cairn/dash.png "Backend dashboard")
-
-![Editing a page](http://iweb.lfred.info/cairn/edit.png "Editing a page")
 
 Installation
 ------------
