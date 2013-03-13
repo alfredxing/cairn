@@ -19,8 +19,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<h1>Want to create a new one?</h1>
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
-				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."></textarea>
-				<p><strong>Preview:</strong></p>
+				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. Markdown &amp; HTML are both OK."></textarea>
+				<p><strong>Preview:</strong>
+					<a class="help" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">?</a>
+				</p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
 				<button type="submit" id="publish" class="button">Publish</button>

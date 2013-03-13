@@ -20,8 +20,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<form id="compose" action="page.php" method="POST">
 				<input type="hidden" name="titlebefore" value='<?php echo $page; ?>'/>
 				<input type="text" placeholder="Name your page." name="title" id="title" value="<?php echo ucfirst(htmlentities(urldecode($page))); ?>">
-				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."><?php echo gc($page); ?></textarea>
-				<p><strong>Preview:</strong></p>
+				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. Markdown &amp; HTML are both OK."><?php echo gc($page); ?></textarea>
+				<p><strong>Preview:</strong>
+					<a class="help" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">?</a>
+				</p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
 				<button type="submit" id="publish" class="button">Publish</button>
