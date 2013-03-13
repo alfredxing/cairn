@@ -19,7 +19,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<h1>Want to create a new one?</h1>
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
-				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."></textarea>
+				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."></textarea>
+				<textarea name="content" id="html" style="display:none;"></textarea>
 				<p><strong>Preview:</strong></p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
@@ -31,7 +32,6 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<form action="meta.php" method="POST">
 				<input type="text" name="name" placeholder="Name of site" value="<?php echo $json['name']; ?>">
 				<input type="text" name="keywords" placeholder="Keywords, separated, by, commas" value="<?php echo $json['keywords'];?>">
-				<textarea name="description" placeholder="Description"><?php echo $json['description']; ?></textarea>
 				<button type="submit" class="button">Save your stuff.</button>
 			</form>
 			<br>
@@ -49,7 +49,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		};
 		document.getElementById('compose').onsubmit = function() {
 			var content = document.getElementById('content');
-			content.value = marked(content.value);
+			document.getElementById("html").value = marked(content.value);
 		};
 		document.getElementById('content').oninput();
 	};

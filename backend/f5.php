@@ -4,8 +4,7 @@ $refresh = true;
 include("glob.php");
 $meta = json_decode(file_get_contents("../meta/meta.txt"), true);
 
-function update($title,$co,$file) {
-	$content = $co;
+function update($title,$content,$md) {
 
 	/* $content = str_replace(array("\r\n","\r"), "\n", $content) . "\n";
 	$content = preg_replace('/(\n){2,}/',"</p><p>",$content);
@@ -21,8 +20,10 @@ function update($title,$co,$file) {
 	$render = str_replace("[nav]",$GLOBALS["nav"],$render);
 
 	if ($title && $content) {
+		$naext = "../meta/pages/".strtolower($title).".";
 		file_put_contents(("../" . strtolower($title) . ".html"), $render);
-		file_put_contents($file, $co);
+		file_put_contents($naext."md",$md);
+		file_put_contents($naext."txt", $content);
 		return $content;
 	}
 	else {
@@ -42,7 +43,8 @@ function rall() {
 		$file = $i;
 		$name = fnamen($i);
 		$content = file_get_contents($file);
-		update($name,$content,$file,$nav);
+		$md = file_get_contents('../meta/pages/'.strtolower($name).'.md');
+		update($name,$content,$md);
 	};
 }
 

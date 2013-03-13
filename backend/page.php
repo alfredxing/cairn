@@ -20,6 +20,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			$title = $_POST["title"];
 			$meta = json_decode(file_get_contents("../meta/meta.txt"), true);
 			$content = $_POST["content"];
+			$md = $_POST["markdown"];
 			$delete = $_POST["delete"];
 			$confirmed = $_POST["confirmed"];
 
@@ -51,18 +52,21 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<h2>And we did.</h2><br>";
 				unlink("../" . urldecode(urldecode(strtolower($title))) . ".html");
 				unlink("../meta/pages/" . urldecode(urldecode(strtolower($title))) . ".txt");
+				unlink("../meta/pages/" . urldecode(urldecode(strtolower($title))) . ".md");
 			} else if ($title && $content) {
 				if ($titlebefore && $title !== $titlebefore) {
 					unlink("../" . urldecode(strtolower($titlebefore)) . ".html");
 					unlink("../meta/pages/" . urldecode(strtolower($titlebefore)) . ".txt");
+					unlink("../meta/pages/" . urldecode(strtolower($titlebefore)) . ".md");
 				}
-				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . update($title,$content,("../meta/pages/" . strtolower($title) . ".txt")) . "</p></blockquote>";
+				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . update($title,$content,$md) . "</p></blockquote>";
 				/* file_put_contents(("../" . strtolower($title) . ".html"), $render);
 				file_put_contents(("../meta/pages/" . strtolower($title) . ".txt"), $_POST["content"]); */
 			} else {
 				echo "Request not complete.";
 			}
 
+			$refresh = true;
 			rall();
 
 			?>

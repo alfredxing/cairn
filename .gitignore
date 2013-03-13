@@ -4,6 +4,7 @@
 
 *.html
 meta/pages/*.txt
+meta/pages/*.md
 
 
 #################
