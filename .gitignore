@@ -5,6 +5,7 @@
 *.html
 meta/pages/*.txt
 meta/pages/*.md
+sftp-config.json
 
 
 #################
