@@ -20,9 +20,9 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
 				<textarea name="content" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."></textarea>
+				<p><strong>Preview:</strong></p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
-				<button id="parse" class="button">Preview</button>
 				<button type="submit" id="publish" class="button">Publish</button>
 			</form>
 		</section>
@@ -51,6 +51,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			var content = document.getElementById('content');
 			content.value = marked(content.value);
 		};
+		document.getElementById('content').oninput();
 	};
 	</script>
 </body>
