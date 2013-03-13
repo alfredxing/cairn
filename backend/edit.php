@@ -22,7 +22,10 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<input type="text" placeholder="Name your page." name="title" id="title" value="<?php echo ucfirst(htmlentities(urldecode($page))); ?>">
 				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."><?php echo gc($page); ?></textarea>
 				<textarea name="content" id="html" style="display:none;"></textarea>
-				<p><strong>Preview:</strong></p>
+				<p>
+					<strong>Preview:</strong>
+					<a class="help" target="_blank" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">?</a>
+				</p>
 				<blockquote name="markdown" id="preview" style="width:80%;padding:12px;overflow:hidden"></blockquote>
 				<br>
 				<button type="submit" id="publish" class="button">Publish</button>
