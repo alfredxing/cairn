@@ -10,8 +10,12 @@ Cairn is also huge on usability. A great backend design. Pages in Github flavour
 
 **At just 15KB zipped, it doesn't need an explanation.**
 
-Screenshot
-----------
+Screenshots
+-----------
+
+![Dashboard](http://cairn.lfred.info/backend.png)
+
+![Dashboard](http://cairn.lfred.info/edit.png)
 
 
 Installation
