@@ -33,4 +33,5 @@ Start making pages by logging in to `/backend`.
 Meta
 ----
 
+Currently version **0.1**.  
 This software is licensed according to the [LICENSE.md](https://raw.github.com/alfredxing/cairn/master/LICENSE.md) file.
