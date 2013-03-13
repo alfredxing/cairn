@@ -4,7 +4,7 @@ Cairn
 Introduction
 ------------
 
-A CMS that's like no other. Generates static HTML files to serve quickly and efficiently.
+A static site generator CMS that's like no other. Generates static HTML files to serve quickly and efficiently.
 With an administration area (that's right). Oh, and it's also themeable.
 Cairn is also huge on usability. A great backend design. Pages in Github flavoured Mardown.
 
