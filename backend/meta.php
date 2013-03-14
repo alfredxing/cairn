@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
-$name = $_POST["name"];
-$keywords = $_POST["keywords"];
-$description = $_POST["description"];
+$name = rawurldecode($_POST["name"]);
+$keywords = rawurldecode($_POST["keywords"]);
+$description = rawurldecode($_POST["description"]);
 if ($name) {
 	$json = '{"name":"'.$name.'","keywords":"'.$keywords.'","description":"'.$description.'"}';
 	file_put_contents(("../meta/meta.txt"), $json);

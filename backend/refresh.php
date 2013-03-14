@@ -12,7 +12,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	<?php include "./sidebar.php" ?>
 	<div id="frame">
 		<section id="edit">
-			<?php include("f5.php"); rall(); ?>
+			<?php include("f5.php"); rall(true,false); ?>
 			<h1>We've refreshed all your pages</h1>
 			<p>Now they have the latest and greatest template.</p>
 			<p>

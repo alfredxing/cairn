@@ -10,15 +10,17 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 </head>
 <body>
 	<?php include "./sidebar.php" ?>
+	<os id="os" value="<?php echo php_uname(); ?>"></os>
 	<div id="frame">
 		<section id="pages">
 			<h1>Your pages:</h1>
-			<ul><?php $gedit=true; include('glob.php'); g(); ?></ul>
+			<ul><?php $gedit=true; include('glob.php'); g(false,false); ?></ul>
 		</section>
 		<section id="new">
 			<h1>Want to create a new one?</h1>
 			<form id="compose" action="page.php" method="POST">
 				<input type="text" placeholder="Name your page. This also determines the URL (/[name])" name="title" id="title">
+				<div class="error"></div>
 				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. Markdown and HTML are both okay."></textarea>
 				<textarea name="content" id="html" style="display:none;"></textarea>
 				<p>
@@ -46,18 +48,6 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		<div id="clear"></div>
 	</div>
 	<script src="js/vendor/md.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	window.onload = function() {
-		document.getElementById('content').oninput = function() {
-			document.getElementById('preview').innerHTML = marked(this.value);
-		};
-		document.getElementById('compose').onsubmit = function() {
-			var content = document.getElementById('content');
-			document.getElementById("html").value = marked(content.value);
-		};
-		document.getElementById('content').oninput();
-		marked.setOptions({breaks:true});
-	};
-	</script>
+	<script src="js/err.min.js" type="text/javascript"></script>
 </body>
 </html>
