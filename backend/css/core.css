@@ -205,6 +205,11 @@ section {
 	outline-color: #111;
 }
 
+.button:disabled {
+    background: #CCC;
+    cursor: default;
+}
+
 .page {
 	margin-right: 10px;
 	height: 100px;
