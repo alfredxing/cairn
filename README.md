@@ -23,7 +23,7 @@ Screenshots
 
 ![Editing a page](http://cairn.lfred.info/edit.png)
 
-![The default theme (almost no styling)](http://cairn.lfred.info/theme.png)
+![The default theme (almost no styling)](http://cairn.lfred.info/demo.png)
 
 
 Installation
