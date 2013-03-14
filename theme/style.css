@@ -6,9 +6,8 @@ body {
 }
 nav {
 	position: fixed;
-	width: 300px;
-	margin-left: -350px;
-	text-align: right;
+	width: 150px;
+	margin-left: -150px;
 }
 nav ul {
 	margin: 1.4em 0;
@@ -20,4 +19,7 @@ nav a {
 }
 nav a:hover {
 	border-bottom: 1px dashed #696969;
+}
+img {
+	max-width: 100%;
 }
