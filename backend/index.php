@@ -56,6 +56,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			document.getElementById("html").value = marked(content.value);
 		};
 		document.getElementById('content').oninput();
+		marked.setOptions({breaks:true});
 	};
 	</script>
 </body>
