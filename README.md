@@ -10,6 +10,12 @@ Cairn is also huge on usability. A great backend design. Pages in Github flavour
 
 **At under 20KB zipped, it doesn't need an explanation.**
 
+Demo
+----
+
+You can access a running version of Cairn at http://cairn.lfred.info  
+However, for security reasons, the backend is closed off (you can [download Cairn](https://github.com/alfredxing/cairn/archive/master.zip) if you want to test it out).
+
 Screenshots
 -----------
 
