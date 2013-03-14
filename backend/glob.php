@@ -1,24 +1,24 @@
 <?php
 function fname($name) {
-	$n = ucfirst(str_replace(".html","",substr($name,3)));
+	$n = str_replace(".html","",substr(urldecode($name),3));
 	return (string)$n;
 };
 $nav = '';
-function g() {
+function g($refresh,$delete) {
 	$pages = glob('../*.htm*');
-	if (!$pages && !$refresh) {
+	if (!$pages && !$refresh && !$delete) {
 		echo 'You don\'t have any pages. Why not get started below?';
 	} else {
 		foreach ($pages as $i) {
 			$name = fname($i);
 			if ($GLOBALS['gedit']==true) {
-				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . rawurlencode($name). '" class="page button">' . $name . '</button></form>';
+				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . $name. '" class="page button">' . $name . '</button></form>';
 			}
 			elseif ($GLOBALS['refresh']==true) {
-				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.rawurlencode(strtolower($name)).'" class="page">' . $name . '</a></li>';
+				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.$i.'" class="page">' . $name . '</a></li>';
 			}
 			else {
-				echo '<li><a href="../'.rawurlencode($name).'" class="page">' . $name . '</a></li>';
+				echo '<li><a href="../'.$i.'" class="page">' . $name . '</a></li>';
 			}
 		}
 	}

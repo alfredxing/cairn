@@ -308,6 +308,16 @@ blockquote h1 {
 	margin-top: 0.25em;
 }
 
+.error {
+	background: #A33;
+	color: #FFF;
+	width: 80%;
+	overflow: hidden;
+	padding: 12px;
+	border-radius: 3px;
+	display: none;
+}
+
 .help {
 	display: inline-block;
 	background: #555;
