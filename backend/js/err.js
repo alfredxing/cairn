@@ -14,10 +14,13 @@ window.onload = function() {
 			if (this.value.indexOf(ch) !== -1) {
 				currError.push(ch);
 				error.style.display = "block";
+				document.getElementById('publish').setAttribute('disabled', 'true');
 			}
 		}
-		if (currError.length === 0)
+		if (currError.length === 0) {
 			error.style.display = "none";
+			document.getElementById('publish').removeAttribute('disabled');
+		}
 		else
 			error.innerHTML += currError.join(' , ');
 	};
