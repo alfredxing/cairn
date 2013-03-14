@@ -1,1 +1,1 @@
-{"name":"Cairn","keywords":"Sticky Bun, No Worries, Yessir, Chill Winston","description":"The land of ten thousand lakes."}
+{"name":"Minnesota","keywords":"Sticky Bun, No Worries, Yessir, Chill Winston","description":"The land of ten thousand lakes."}

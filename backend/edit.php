@@ -2,7 +2,7 @@
 <?php
 $page = $_POST["page"];
 function gc($name) {
-	return file_get_contents("../meta/pages/".strtolower(urldecode($name)).".md");
+	return file_get_contents("../meta/pages/". $name .".md");
 }
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 ?>
@@ -14,12 +14,14 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 </head>
 <body>
 	<?php include "./sidebar.php"; ?>
+	<os id="os" value="<?php echo php_uname(); ?>"></os>
 	<div id="frame">
 		<section id="edit">
-			<h1>Editing: <?php echo urldecode($page); ?></h1>
+			<h1>Editing: <?php echo $page; ?></h1>
 			<form id="compose" action="page.php" method="POST">
-				<input type="hidden" name="titlebefore" value='<?php echo $page; ?>'/>
-				<input type="text" placeholder="Name your page." name="title" id="title" value="<?php echo ucfirst(htmlentities(urldecode($page))); ?>">
+				<input type="hidden" name="titlebefore" value="<?php echo str_replace('"', '\"', $page); ?>"/>
+				<input type="text" placeholder="Name your page." name="title" id="title" value="<?php echo $page; ?>">
+				<div class="error"></div>
 				<textarea name="markdown" id="content" rows="10" placeholder="Whatever you want to say. HTML accepted."><?php echo gc($page); ?></textarea>
 				<textarea name="content" id="html" style="display:none;"></textarea>
 				<p>
@@ -34,18 +36,6 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		</section>
 	</div>
 	<script src="js/vendor/md.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-	window.onload = function() {
-		document.getElementById('content').oninput = function() {
-			document.getElementById('preview').innerHTML = marked(this.value);
-		};
-		document.getElementById('compose').onsubmit = function() {
-			var content = document.getElementById('content');
-			document.getElementById("html").value = marked(content.value);
-		};
-		document.getElementById('content').oninput();
-		marked.setOptions({breaks:true});
-	};
-	</script>
+	<script src="js/err.min.js" type="text/javascript"></script>
 </body>
 </html>

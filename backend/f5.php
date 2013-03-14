@@ -20,8 +20,8 @@ function update($title,$content,$md) {
 	$render = str_replace("[nav]",$GLOBALS["nav"],$render);
 
 	if ($title && $content) {
-		$naext = "../meta/pages/".strtolower($title).".";
-		file_put_contents(("../" . strtolower($title) . ".html"), $render);
+		$naext = "../meta/pages/".$title.".";
+		file_put_contents(("../" . $title . ".html"), $render);
 		file_put_contents($naext."md",$md);
 		file_put_contents($naext."txt", $content);
 		return $content;
@@ -32,18 +32,18 @@ function update($title,$content,$md) {
 }
 
 function fnamen($name) {
-	$n = ucfirst(str_replace(".txt","",substr($name,14)));
+	$n = str_replace(".txt","",substr($name,14));
 	return (string)$n;
 };
 
-function rall() {
+function rall($delete) {
 	$pages = glob('../meta/pages/*.txt');
-	g();
+	g(true,$delete);
 	foreach ($pages as $i) {
 		$file = $i;
 		$name = fnamen($i);
 		$content = file_get_contents($file);
-		$md = file_get_contents('../meta/pages/'.strtolower($name).'.md');
+		$md = file_get_contents('../meta/pages/'.$name.'.md');
 		update($name,$content,$md);
 	};
 }
