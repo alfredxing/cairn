@@ -15,7 +15,9 @@ Screenshots
 
 ![Dashboard](http://cairn.lfred.info/backend.png)
 
-![Dashboard](http://cairn.lfred.info/edit.png)
+![Editing a page](http://cairn.lfred.info/edit.png)
+
+![The default theme (almost no styling)](http://cairn.lfred.info/theme.png)
 
 
 Installation
