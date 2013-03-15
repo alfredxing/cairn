@@ -6,8 +6,9 @@ body {
 }
 nav {
 	position: fixed;
-	width: 150px;
-	margin-left: -150px;
+	width: 300px;
+	margin-left: -350px;
+	text-align: right;
 }
 nav ul {
 	margin: 1.4em 0;
