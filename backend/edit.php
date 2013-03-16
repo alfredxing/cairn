@@ -2,7 +2,7 @@
 <?php
 $page = $_POST["page"];
 function gc($name) {
-	return file_get_contents("../meta/pages/". $name .".md");
+	return file_get_contents("../meta/pages/". strtolower($name) .".md");
 }
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 ?>
