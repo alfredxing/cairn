@@ -38,14 +38,14 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				echo "<h1>You told us to delete this page:</h1><br><blockquote><h1>" . $title . ".</h1>
 				<p>" . $content . "</p></blockquote>
 				<h2>And we did.</h2><br>";
-				unlink("../" . $title . ".html");
-				unlink("../meta/pages/" . $title . ".txt");
-				unlink("../meta/pages/" . $title . ".md");
+				unlink("../" . strtolower($title) . ".html");
+				unlink("../meta/pages/" . strtolower($title) . ".txt");
+				unlink("../meta/pages/" . strtolower($title) . ".md");
 			} else if ($title && $content) {
 				if ($titlebefore && $title !== $titlebefore) {
-					unlink("../" . $titlebefore . ".html");
-					unlink("../meta/pages/" . $titlebefore . ".txt");
-					unlink("../meta/pages/" . $titlebefore . ".md");
+					unlink("../" . strtolower($titlebefore) . ".html");
+					unlink("../meta/pages/" . strtolower($titlebefore) . ".txt");
+					unlink("../meta/pages/" . strtolower($titlebefore) . ".md");
 				}
 				echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . update($title,$content,$md) . "</p></blockquote>";
 			} else {
@@ -56,7 +56,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 			<p>
 				<?php
 				if (!$delete) {
-					echo "<a href=\"../" . $title . "\" class='button'>Visit the page</a>&nbsp;&nbsp;";
+					echo "<a href=\"../" . strtolower($title) . "\" class='button'>Visit the page</a>&nbsp;&nbsp;";
 				}
 				if ($confirmed || !$delete) {
 					echo "<a href=\"./\" class=\"button\">Back to the dash</a>";
