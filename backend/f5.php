@@ -15,13 +15,13 @@ function update($title,$content,$md) {
 	$render = $before . $content . $after;
 
 	$render = str_replace("[site]",$GLOBALS['meta']['name'],$render);
-	$render = str_replace("[title]",$title,$render);
+	$render = str_replace("[title]",ucfirst($title),$render);
 	$render = str_replace("[keywords]",$meta["keywords"],$render);
 	$render = str_replace("[nav]",$GLOBALS["nav"],$render);
 
 	if ($title && $content) {
-		$naext = "../meta/pages/".$title.".";
-		file_put_contents(("../" . $title . ".html"), $render);
+		$naext = "../meta/pages/".strtolower($title).".";
+		file_put_contents(("../" . strtolower($title) . ".html"), $render);
 		file_put_contents($naext."md",$md);
 		file_put_contents($naext."txt", $content);
 		return $content;
