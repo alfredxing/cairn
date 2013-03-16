@@ -25,6 +25,15 @@ Screenshots
 
 ![The default theme (almost no styling)](http://cairn.lfred.info/demo.png)
 
+Documentation & Theming
+-----------------------
+
+[We've put up docs](https://github.com/alfredxing/cairn/wiki/Documentation) for all of you to check out.
+Documentation is for:
+* How to use Cairn
+* Theming Cairn
+* More!
+
 
 Installation
 ------------
