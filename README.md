@@ -16,15 +16,6 @@ Demo
 You can access a running version of Cairn at http://cairn.lfred.info  
 However, for security reasons, the backend is closed off (you can [download Cairn](https://github.com/alfredxing/cairn/archive/master.zip) if you want to test it out).
 
-Screenshots
------------
-
-![Dashboard](http://cairn.lfred.info/backend.png)
-
-![Editing a page](http://cairn.lfred.info/edit.png)
-
-![The default theme (almost no styling)](http://cairn.lfred.info/demo.png)
-
 Documentation & Theming
 -----------------------
 
@@ -34,6 +25,14 @@ Documentation is for:
 * Theming Cairn
 * More!
 
+Screenshots
+-----------
+
+![Dashboard](http://cairn.lfred.info/backend.png)
+
+![Editing a page](http://cairn.lfred.info/edit.png)
+
+![The default theme (almost no styling)](http://cairn.lfred.info/demo.png)
 
 Installation
 ------------
