@@ -17,6 +17,7 @@ function update($title,$content,$md) {
 	$render = str_replace("[site]",$GLOBALS['meta']['name'],$render);
 	$render = str_replace("[title]",ucfirst($title),$render);
 	$render = str_replace("[keywords]",$meta["keywords"],$render);
+	$render = str_replace("[description]",$meta["description"],$render);
 	$render = str_replace("[nav]",$GLOBALS["nav"],$render);
 
 	if ($title && $content) {
