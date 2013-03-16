@@ -15,7 +15,7 @@ function g($refresh,$delete) {
 				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . $name. '" class="page button">' . $name . '</button></form>';
 			}
 			elseif ($GLOBALS['refresh']==true) {
-				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.$i.'" class="page">' . ucfirst($name) . '</a></li>';
+				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.strtolower(fname($i)).'" class="page">' . ucfirst($name) . '</a></li>';
 			}
 			else {
 				echo '<li><a href="../'.$i.'" class="page">' . $name . '</a></li>';
