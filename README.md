@@ -56,6 +56,3 @@ Meta
 
 Currently version **1.0**.  
 This software is licensed according to the [LICENSE.md](https://raw.github.com/alfredxing/cairn/master/LICENSE.md) file.
-
-Build status:  
-[![Build Status](https://travis-ci.org/alfredxing/cairn.png?branch=master)](https://travis-ci.org/alfredxing/cairn)
