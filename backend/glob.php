@@ -1,4 +1,5 @@
 <?php
+error_reporting(2);
 function fname($name) {
 	$n = ucfirst(str_replace(".html","",substr(urldecode($name),3)));
 	return (string)$n;
@@ -11,11 +12,16 @@ function g($refresh,$delete) {
 	} else {
 		foreach ($pages as $i) {
 			$name = fname($i);
-			if ($GLOBALS['gedit']==true) {
+			if ($GLOBALS['gedit'] == true) {
 				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . $name. '" class="page button">' . $name . '</button></form>';
 			}
-			elseif ($GLOBALS['refresh']==true) {
-				$GLOBALS['nav'] = $GLOBALS['nav'] . '<li><a href="./'.strtolower(fname($i)).'" class="page">' . ucfirst($name) . '</a></li>';
+			elseif ($GLOBALS['refresh'] == true) {
+				if (strtolower(fname($i)) == "index") {
+					$entry = '<li><a href="./" class="page">' . ucfirst($name) . '</a></li>';
+				} else {
+					$entry = '<li><a href="./'.strtolower(fname($i)).'" class="page">' . ucfirst($name) . '</a></li>';
+				}
+				$GLOBALS['nav'] = $GLOBALS['nav'] . $entry;
 			}
 			else {
 				echo '<li><a href="../'.$i.'" class="page">' . $name . '</a></li>';
