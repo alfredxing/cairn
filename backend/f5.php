@@ -10,8 +10,16 @@ function update($title,$content,$md) {
 	$content = preg_replace('/(\n){2,}/',"</p><p>",$content);
 	$content = preg_replace('#\n(\w)#', '<br>\1', $content); */
 
-	$before = file_get_contents("../theme/before.html") . "\n<p>";
-	$after = "</p>\n" . file_get_contents("../theme/after.html");
+	if ( file_exists("../theme/" . strtolower($title) . "/before.html") ) {
+		$before = file_get_contents("../theme/" . strtolower($title) . "/before.html") . "\n<p>";
+	} else {
+		$before = file_get_contents("../theme/before.html") . "\n<p>";
+	}
+	if ( file_exists("../theme/" . strtolower($title) . "/after.html") ) {
+		$after = file_get_contents("../theme/" . strtolower($title) . "/after.html") . "\n<p>";
+	} else {
+		$after = file_get_contents("../theme/after.html") . "\n<p>";
+	}
 	$render = $before . $content . $after;
 
 	$render = str_replace("[site]",$GLOBALS['meta']['name'],$render);
