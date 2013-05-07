@@ -1,5 +1,5 @@
 <?php
-if (!$name) {
+if (!isset($name)) {
 	$name = $json['name'];
 }
 ?>

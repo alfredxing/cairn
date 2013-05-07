@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
+error_reporting(2);
 ?>
 <html>
 <head>
