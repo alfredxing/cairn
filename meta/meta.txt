@@ -1,1 +1,1 @@
-{"name":"Minnesota","keywords":"Sticky Bun, No Worries, Yessir, Chill Winston","description":"The land of ten thousand lakes."}
+{"name":"Cairn","keywords":"cairn,cms,php,flat-file,small,fast","description":"A flat-file CMS system built in PHP"}
