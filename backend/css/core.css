@@ -4,7 +4,7 @@ body {
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	background: #FAFBFC;
+	background: #FFF;
 	text-rendering: optimizeLegibility;
 }
 
@@ -41,7 +41,7 @@ header {
 	position: relative;
 	float: left;
 	min-width: 150px;
-	background-color: url(../images/back.png) #333;
+	background: url('../images/back.png') #333;
 	color: #FFF;
 	text-decoration: none;
 	-webkit-user-select: none;
@@ -96,7 +96,7 @@ header {
 }
 
 header a {
-	color: #EEE;
+	color: #FFF;
 	display: block;
 }
 
@@ -105,7 +105,7 @@ header a {
 	margin-top: 20px;
 	display: block;
 	padding-right: 20px;
-	color: #FAFAFA;
+	color: #FFF;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 1.5em;
@@ -188,7 +188,7 @@ section {
 	color: #FFF;
 	padding: 0 1.25em;
 	margin-left: 0;
-	border-radius: 3px;
+	border-radius: 5px;
 	font: 1.25em/2em "Lato",sans-serif;
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.2);
 	-webkit-user-select: none;
@@ -231,7 +231,7 @@ section {
 	width: 0;
 	top: 0;
 	left: 0;
-	border: 10px solid #FAFBFC;
+	border: 10px solid #FFF;
 	border-right-color: #333;
 	border-bottom-color: #333;
 	border-bottom-right-radius: 3px;
