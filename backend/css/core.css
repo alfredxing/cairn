@@ -41,8 +41,7 @@ header {
 	position: relative;
 	float: left;
 	min-width: 150px;
-	background-color: #333;
-	background: -webkit-radial-gradient(bottom left, circle, #333,#424242);
+	background-color: url(../images/back.png) #333;
 	color: #FFF;
 	text-decoration: none;
 	-webkit-user-select: none;
@@ -107,7 +106,8 @@ header a {
 	display: block;
 	padding-right: 20px;
 	color: #FAFAFA;
-	font-weight: 300;
+	font-weight: 700;
+	text-transform: uppercase;
 	font-size: 1.5em;
 }
 
