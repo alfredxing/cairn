@@ -38,7 +38,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<input type="text" name="name" placeholder="Name of site" value="<?php echo $json['name']; ?>">
 				<input type="text" name="keywords" placeholder="Keywords, separated, by, commas" value="<?php echo $json['keywords'];?>">
 				<textarea name="description" placeholder="Describe your site in a short blurb"><?php echo $json['description'];?></textarea>
-				<button type="submit" class="button">Save your stuff.</button>
+				<button type="submit" class="button">Save your stuff</button>
 			</form>
 			<br>
 			<h1>Refresh your pages.</h1>
