@@ -16,9 +16,9 @@ function update($title,$content,$md) {
 		$before = file_get_contents("../theme/before.html") . "\n<p>";
 	}
 	if ( file_exists("../theme/" . strtolower($title) . "/after.html") ) {
-		$after = file_get_contents("../theme/" . strtolower($title) . "/after.html") . "\n<p>";
+		$after = file_get_contents("../theme/" . strtolower($title) . "/after.html") . "\n";
 	} else {
-		$after = file_get_contents("../theme/after.html") . "\n<p>";
+		$after = file_get_contents("../theme/after.html") . "\n";
 	}
 	$render = $before . $content . $after;
 
