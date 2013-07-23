@@ -5,7 +5,6 @@
 *.html
 meta/pages/*.json
 *.zip
-*.png
 *.jpg
 
 
