@@ -65,6 +65,7 @@ header a:visited {
 }
 header a:hover {
 	color: #667788;
+	text-decoration: none;
 }
 
 article {
