@@ -83,6 +83,7 @@ article h1.title {
 	line-height: 100px;
 	top: 50px;
 	background: url(images/back.png) bottom right;
+	background-size: cover;
 	margin: 0;
 	text-align: center;
 	text-transform: uppercase;
