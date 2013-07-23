@@ -13,7 +13,7 @@ function g($refresh,$delete) {
 		foreach ($pages as $i) {
 			$name = fname($i);
 			if ($GLOBALS['gedit'] == true) {
-				echo '<form action="./edit.php" method="POST"><button type="submit" name="page" value="' . $name. '" class="page button">' . $name . '</button></form>';
+				echo '<form action="./edit" method="POST"><button type="submit" name="page" value="' . $name. '" class="page button">' . $name . '</button></form>';
 			}
 			elseif ($GLOBALS['refresh'] == true) {
 				if (strtolower(fname($i)) == "index") {
