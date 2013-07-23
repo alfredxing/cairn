@@ -285,3 +285,16 @@ body.dash section.title {
 	-ms-user-select: none;
 	user-select: none;
 }
+body.dash #none {
+	display: block;
+	padding: 50px;
+	font-size: 1.25em;
+	color: #667788;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body.dash #none a {
+	color: #6bc;
+}

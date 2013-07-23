@@ -8,7 +8,7 @@ $nav = '';
 function g($refresh,$delete) {
 	$pages = glob('../*.htm*');
 	if (!$pages && !$refresh && !$delete) {
-		echo 'You don\'t have any pages. Why not get started below?';
+		echo '<span id="none">You don\'t have any pages yet. Why not <a href="./new.php">create a new one?</a></span>';
 	} else {
 		foreach ($pages as $i) {
 			$name = fname($i);
