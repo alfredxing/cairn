@@ -28,11 +28,7 @@ Documentation is for:
 Screenshots
 -----------
 
-![Dashboard](http://cairn.lfred.info/backend.png)
-
-![Editing a page](http://cairn.lfred.info/edit.png)
-
-![The default theme (almost no styling)](http://cairn.lfred.info/demo.png)
+*Coming soon for `v2.x.x`*
 
 Installation
 ------------
@@ -54,5 +50,5 @@ Everyone's welcome to contribute to Cairn. To get started, head over to our [Con
 Meta
 ----
 
-Currently version **`2.1.0`** in repository, **`2.0.0`** in release.  
+Currently version <b>`2.1.0`</b> in repository, <b>`2.0.0`</b> in release.  
 This software is licensed according to the [LICENSE.md](https://raw.github.com/alfredxing/cairn/master/LICENSE.md) file.
