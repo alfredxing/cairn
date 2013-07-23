@@ -3,8 +3,8 @@
 #################
 
 *.html
-meta/pages/*.txt
-meta/pages/*.md
+meta/pages/*.json
+*.zip
 *.png
 *.jpg
 

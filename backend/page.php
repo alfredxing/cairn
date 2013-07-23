@@ -30,14 +30,12 @@ if ($delete && !$confirmed) {
 	echo "<h1>You told us to delete this page:</h1><br><blockquote><h1>" . $title . ".</h1>
 	<p>" . $content . "</p></blockquote>
 	<h2>And we did.</h2><br>";
-	unlink("../" . strtolower($title) . ".html");
-	unlink("../meta/pages/" . strtolower($title) . ".txt");
-	unlink("../meta/pages/" . strtolower($title) . ".md");
+	unlink("../" . swd(strtolower($title)) . ".html");
+	unlink("../meta/pages/" . strtolower($title) . ".json");
 } else if ($title && $content) {
 	if ($titlebefore && $title !== $titlebefore) {
-		unlink("../" . strtolower($titlebefore) . ".html");
-		unlink("../meta/pages/" . strtolower($titlebefore) . ".txt");
-		unlink("../meta/pages/" . strtolower($titlebefore) . ".md");
+		unlink("../" . swd(strtolower($titlebefore)) . ".html");
+		unlink("../meta/pages/" . strtolower($titlebefore) . ".json");
 	}
 	echo "<h1>All done! Here's a preview:</h1><br><blockquote><h1>" . $title . "</h1><p>" . update($title,$content,$md) . "</p></blockquote>";
 } else {

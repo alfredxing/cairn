@@ -19,7 +19,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		</nav>
 	</header>
 	<section class="title">
-		<h1>Cairn currently has <?php echo count(glob("../meta/pages/*.md")); ?> <?php echo (count(glob("../meta/pages/*.md")) === 1) ? "page" : "pages" ?></h1>
+		<h1>Cairn currently has <?php echo count(glob("../meta/pages/*.json")); ?> <?php echo (count(glob("../meta/pages/*.md")) === 1) ? "page" : "pages" ?></h1>
 	</section>
 	<section class="content">
 		<div id="pages">

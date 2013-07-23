@@ -1,7 +1,11 @@
 <?php
-$page = (isset($_POST["page"])) ? $_POST["page"] : $_GET["page"];
+$page = (isset($_POST["page"]) && ($_POST["page"] !== '')) ? $_POST["page"] : $_GET["page"];
 function gc($name) {
-	return file_get_contents("../meta/pages/". strtolower($name) .".md");
+	$data = json_decode(file_get_contents("../meta/pages/". strtolower($name) .".json"), true);
+	return $data["md"];
+}
+function swd($name) {
+	return str_replace(" ", "-", $name);
 }
 $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 ?>
@@ -19,7 +23,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<li><a href="#" id="save" disabled>Save</a></li>
 				<li><a href="./">Cancel</a></li>
 				<li><a href="#" id="delete">Delete</a></li>
-				<li><a href="../<?php echo strtolower($page); ?>" target="_blank">View</a></li>
+				<li><a href="../<?php echo swd(strtolower($page)); ?>" target="_blank">View</a></li>
 			</ul>
 			<ul class="sec">
 				<li><a href="./new" title="New page">New</a></li>

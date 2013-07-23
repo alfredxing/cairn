@@ -23,16 +23,18 @@ function update($title,$content,$md) {
 	$render = $before . $content . $after;
 
 	$render = str_replace("[site]",$GLOBALS['meta']['name'],$render);
-	$render = str_replace("[title]",ucfirst($title),$render);
+	$render = str_replace("[title]",$title,$render);
 	$render = str_replace("[keywords]",$GLOBALS['meta']["keywords"],$render);
 	$render = str_replace("[description]",$GLOBALS['meta']["description"],$render);
 	$render = str_replace("[nav]",$GLOBALS["nav"],$render);
 
 	if ($title && $content) {
 		$naext = "../meta/pages/".strtolower($title).".";
-		file_put_contents(("../" . strtolower($title) . ".html"), $render);
-		file_put_contents($naext."md",$md);
-		file_put_contents($naext."txt", $content);
+		file_put_contents(("../" . swd(strtolower($title)) . ".html"), $render);
+		/*file_put_contents($naext."md", $md);
+		file_put_contents($naext."txt", $content);*/
+		$data = json_encode(array("t" => $title, "md" => $md, "c" => $content));
+		file_put_contents($naext."json", $data);
 		return $content;
 	}
 	else {
@@ -46,13 +48,13 @@ function fnamen($name) {
 };
 
 function rall($delete) {
-	$pages = glob('../meta/pages/*.txt');
+	$pages = glob('../meta/pages/*.json');
 	g(true,$delete);
 	foreach ($pages as $i) {
-		$file = $i;
-		$name = fnamen($i);
-		$content = file_get_contents($file);
-		$md = file_get_contents('../meta/pages/'.$name.'.md');
+		$data = json_decode(file_get_contents($i), true);
+		$name = $data["t"];
+		$content = $data["c"];
+		$md = $data["md"];
 		update($name,$content,$md);
 	};
 }

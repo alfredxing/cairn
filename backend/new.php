@@ -60,7 +60,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				content: html
 			}, function(data) {
 				console.log(data);
-				window.location = ( "./edit?page=" + $("#page-title").val() );
+				window.location = ( "./edit.php?page=" + $("#page-title").val() );
 			});
 		});
 		$("#publish[disabled]").click(function() { return false; });
