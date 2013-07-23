@@ -1,26 +1,120 @@
 body {
-	width: 50%;
-	padding: 2em 25%;
+	margin: 0;
+	padding: 0;
 	overflow-x: hidden;
-	font-family: "Lato","Helvetica","Segoe UI",sans-serif;
-}
-nav {
-	position: fixed;
-	width: 300px;
-	margin-left: -350px;
-	text-align: right;
-}
-nav ul {
-	margin: 1.4em 0;
-	list-style-type: none;
-}
-nav a {
-	color: #696969;
-	text-decoration: none;
-}
-nav a:hover {
-	border-bottom: 1px dashed #696969;
+	font-family: "Source Sans Pro", "Open Sans", sans-serif;
+	color: #424242;
 }
 img {
 	max-width: 100%;
+}
+a {
+	text-decoration: none;
+	color: #6bc;
+}
+a:visited {
+	color: #667788;
+}
+a:hover {
+	text-decoration: underline;
+	color: #667788;
+}
+
+header {
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	padding: 0 50px;
+	background: #FFF;
+	overflow: hidden;
+	top: 0;
+	border-bottom: 3px solid #6bc;
+	line-height: 47px;
+	text-transform: uppercase;
+	font-weight: 400;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 10;
+}
+header #logo {
+	font-weight: 700;
+}
+header nav {
+	display: inline-block;
+}
+header nav ul {
+	list-style-type: none;
+	padding: 0 50px;
+	margin: 0;
+}
+header nav li {
+	display: inline-block;
+	margin-right: 15px;
+}
+header nav li.index {
+	display: none;
+	margin: 0;
+}
+header a {
+	color: #6bc;
+	text-decoration: none;
+}
+header a:visited {
+	color: #6bc;
+}
+header a:hover {
+	color: #667788;
+}
+
+article {
+	min-width: 500px;
+	width: 50%;
+	padding: 50px;
+	margin: 130px auto 0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article h1.title {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	line-height: 100px;
+	top: 50px;
+	background: url(images/back.png) bottom right;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: #FFF;
+}
+
+/*** Index page ***/
+body.index article {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	background: url(images/back.png) bottom right;
+	background-size: cover;
+	color: #FFF;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	font-size: 1.5em;
+	display: table;
+}
+body.index article div {
+	width: 50%;
+	padding: 20px 25% 0 25%;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+body.index p {
+	margin: 0;
 }

@@ -1,0 +1,287 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 400 12pt "Source Sans Pro", "Open Sans", sans-serif;
+}
+
+/* Icons */
+.icon {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: url(../images/icons.png);
+}
+.icon.logo {
+	background-position: 0 0;
+}
+.icon.add {
+	background-position: -50px 0;
+}
+.icon.cancel {
+	background-position: -100px 0;
+}
+.icon.go {
+	background-position: -150px 0;
+}
+.icon.refresh {
+	background-position: -200px 0;
+}
+.icon.save {
+	background-position: -250px 0;
+}
+.icon.wrench {
+	background-position: -300px 0;
+}
+.icon.preview {
+	background-position: -350px 0;
+}
+
+/*** Header ***/
+header {
+	position: fixed;
+	background: #6bc;
+	height: 50px;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#logo {
+	display: inline-block;
+	height: 50px;
+	background: #6bc;
+	float: left;
+	position: relative;
+	z-index: 5;
+}
+
+nav {
+	width: 100%;
+	padding-left: 50px;
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	float: l;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li {
+	float: left;
+	height: 50px;
+	margin: 0;
+	text-align: center;
+}
+nav ul li:nth-child(odd) {
+	background: rgba(0,0,0,0.1);
+}
+nav ul li:nth-child(even) {
+	background: rgba(0,0,0,0.15);
+}
+nav li a {
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 11pt;
+	font-weight: 600;
+	line-height: 50px;
+	vertical-align: middle;
+}
+nav li a:hover {
+	color: #ddd;
+}
+nav li a:active {
+	background: rgba(0,0,0,0.1);
+}
+nav li a[disabled] {
+	pointer-events: none;
+	cursor: default;
+	color: #888;
+}
+
+nav ul.sec {
+	float: right;
+}
+
+/*** Content ***/
+/* Title */
+section.title {
+	width: 100%;
+	height: 100px;
+	margin-top: 50px;
+	padding: 0 50px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #eef1f1;
+}
+section.title h1, section.title input {
+	margin: 0;
+	padding: 0;
+	line-height: 100px;
+	vertical-align: middle;
+	font-weight: 700;
+	font-size: 1.5em;
+}
+section.title input {
+	width: 100%;
+	border: none;
+	outline: none;
+	background: transparent;
+	line-height: 1em;
+	margin: 35px 0;
+	font-family: "Source Sans Pro", "Open Sans", sans-serif;
+}
+
+/* Page listing */
+#pages button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 100%;
+	padding: 15px 50px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+	font: 400 14pt "Source Sans Pro", "Open Sans", sans-serif;
+	border: none;
+	margin: 0;
+	color: #FFF;
+	cursor: pointer;
+}
+#pages form:nth-child(odd) button {
+	background: #667788;
+}
+#pages form:nth-child(even) button {
+	background: #445566;
+}
+
+/*** New Page ***/
+body.new section.content {
+	position: relative;
+}
+body.new #preview {
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #6bc;
+	font-size: 11pt;
+	font-weight: 600;
+	line-height: 50px;
+	vertical-align: middle;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 5;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body.new #preview:hover {
+	opacity: 0.5;
+}
+body.new #preview:active {
+	color: #666;
+}
+body.new textarea {
+	width: 100%;
+	padding: 50px;
+	margin: 0;
+	border: none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+	font: 400 16px/20px "Source Code Pro", "Consolas", monospace;
+	overflow: hidden;
+}
+body.new #output {
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	top: 0;
+	padding: 50px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	z-index: 3;
+	background: #FFF;
+	visibility: hidden;
+}
+
+/*** Settings page ***/
+body.settings section.title {
+	position: relative;
+}
+body.settings label {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 20px;
+	text-transform: uppercase;
+	font-size: 11pt;
+	font-weight: 600;
+	color: #6bc;
+	line-height: 50px;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+body.settings .content {
+	position: relative;
+}
+body.settings .content input, body.settings .content textarea {
+	width: 100%;
+	padding: 15px 50px;
+	border: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+	margin: 0;
+}
+body.settings #site-keywords {
+	background: #667788;
+	color: #FFF;
+	font: 400 11pt "Source Code Pro", "Consolas", sans-serif;
+	line-height: 20px;
+	vertical-align: middle;
+}
+body.settings #site-description {
+	font: 400 16px/20px "Source Code Pro", "Consolas", monospace;
+	overflow: hidden;
+}
+body.settings label.description {
+	top: 50px;
+}
+
+
+/*** Index page ***/
+body.dash section.title {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

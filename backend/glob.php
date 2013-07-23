@@ -17,9 +17,9 @@ function g($refresh,$delete) {
 			}
 			elseif ($GLOBALS['refresh'] == true) {
 				if (strtolower(fname($i)) == "index") {
-					$entry = '<li><a href="./" class="page">' . ucfirst($name) . '</a></li>';
+					$entry = '<li class="index"><a href="./" class="page">' . ucfirst($name) . '</a></li>';
 				} else {
-					$entry = '<li><a href="./'.strtolower(fname($i)).'" class="page">' . ucfirst($name) . '</a></li>';
+					$entry = '<li class="' . strtolower(fname($i)) . '"><a href="./'.strtolower(fname($i)).'" class="page">' . ucfirst($name) . '</a></li>';
 				}
 				$GLOBALS['nav'] = $GLOBALS['nav'] . $entry;
 			}
