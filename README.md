@@ -54,5 +54,5 @@ Everyone's welcome to contribute to Cairn. To get started, head over to our [Con
 Meta
 ----
 
-Currently version **`2.0`**.  
+Currently version **`2.0.0`**.  
 This software is licensed according to the [LICENSE.md](https://raw.github.com/alfredxing/cairn/master/LICENSE.md) file.
