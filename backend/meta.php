@@ -11,7 +11,7 @@ if ($name) {
 ?>
 <html>
 <head>
-	<title>Backend - <?php echo $name; ?></title>
+	<title>Backend &bull; <?php echo $name; ?></title>
 	<link rel="stylesheet" href="css/core.min.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>

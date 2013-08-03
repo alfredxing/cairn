@@ -4,7 +4,7 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Backend - <?php echo $json['name']; ?></title>
+	<title>Backend &bull; <?php echo $json['name']; ?></title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Source+Code+Pro' rel='stylesheet' type='text/css'>
 </head>
