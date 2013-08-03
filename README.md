@@ -15,7 +15,7 @@ Cairn is also huge on usability. A great backend design. Pages in GitHub flavour
 Demo
 ----
 
-You can access a running version of Cairn at http://cairn.lfred.info  
+You can access a running version of Cairn at https://cairn.xng.pw  
 However, for security reasons, the backend is closed off (you can [download Cairn](https://github.com/alfredxing/cairn/releases) if you want to test it out).
 
 Documentation & Theming
