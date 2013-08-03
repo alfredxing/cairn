@@ -198,10 +198,10 @@ body.new #preview {
 body.new #preview:hover {
 	opacity: 0.5;
 }
-body.new #preview:active {
+body.new #preview:active, body.new #preview.active {
 	color: #666;
 }
-body.new textarea {
+body.new #page-content {
 	width: 100%;
 	padding: 50px;
 	margin: 0;
@@ -213,6 +213,17 @@ body.new textarea {
 	max-width: 100%;
 	font: 400 16px/20px "Source Code Pro", "Consolas", monospace;
 	overflow: hidden;
+}
+body.new #page-content:empty:after {
+	content: "Body text, styled with Markdown or HTML";
+	color: #AAA;
+}
+body.new #page-content * {
+	margin: 0;
+	padding: 0;
+}
+body.new #page-content.invisible {
+	visibility: hidden;
 }
 body.new #output {
 	position: absolute;
@@ -227,6 +238,9 @@ body.new #output {
 	z-index: 3;
 	background: #FFF;
 	visibility: hidden;
+}
+body.new #output.visible {
+	visibility: visible;
 }
 
 /*** Settings page ***/
