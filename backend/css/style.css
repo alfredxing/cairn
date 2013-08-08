@@ -213,14 +213,7 @@ body.new #page-content {
 	max-width: 100%;
 	font: 400 16px/20px "Source Code Pro", "Consolas", monospace;
 	overflow: hidden;
-}
-body.new #page-content:empty:after {
-	content: "Body text, styled with Markdown or HTML";
-	color: #AAA;
-}
-body.new #page-content * {
-	margin: 0;
-	padding: 0;
+	resize: none;
 }
 body.new #page-content.invisible {
 	visibility: hidden;

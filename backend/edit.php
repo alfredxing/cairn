@@ -38,23 +38,23 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	</section>
 	<section class="content">
 		<div id="preview">Preview</div>
-		<div name="page-content" id="page-content" autofocus contenteditable><?php echo gc($page); ?></div>
+		<textarea name="page-content" id="page-content" autofocus placeholder="Body text, styled with Markdown or HTML"><?php echo gc($page); ?></textarea>
 		<div id="output"></div>
 	</section>
-	<script src="js/vendor/md.min.js" type="text/javascript"></script>
+	<script src="js/marked.min.js" type="text/javascript"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script>
 		var textarea = $('#page-content'), output = $('#output'), preview = $('#preview'), toggle = false;
 		textarea.css("min-height", ( $(window).height() - 155 ) + "px");
 		textarea.on("keyup", function() {
-			// $(this).css("height", ( this.value.split("\n").length * 20 + 100 ) + "px");
+			$(this).css("height", ( this.scrollHeight ));
 		});
 		$("input, #page-content").on("input", function() {
 			$("#save").removeAttr("disabled");
 		});
 		textarea.on("input", function() {
-			output.html(marked($(this).text()));
-		})
+			output.html(marked($(this).val()));
+		});
 		preview.on("click", function() {
 			if (toggle) {
 				toggle = false;
@@ -71,8 +71,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		marked.setOptions({breaks:true});
 		$("#save").click(function() {
 			var title = $("#page-title").val(),
-				markdown = textarea.text(),
-				html = marked(textarea.text());
+				markdown = textarea.val(),
+				html = marked(textarea.val());
 			$.post("./page.php", {
 				title: title,
 				titlebefore: "<?php echo str_replace('"', '\"', $page); ?>",
@@ -86,8 +86,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		$("#save[disabled]").click(function(){ return false; })
 		$("#delete").click(function() {
 			var title = $("#page-title").val(),
-				markdown = textarea.text(),
-				html = marked(textarea.text());
+				markdown = textarea.val(),
+				html = marked(textarea.val());
 			if (!confirm("Are you sure? The page will be permanently deleted.")) return false;
 			$.post("./page.php", {
 				title: title,

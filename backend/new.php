@@ -28,21 +28,20 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 	</section>
 	<section class="content">
 		<div id="preview">Preview</div>
-		<!-- <textarea name="page-content" id="page-content" placeholder="Body text, styled with Markdown or HTML"></textarea> -->
-		<div id="page-content" name="page-content" contenteditable></div>
+		<textarea name="page-content" id="page-content" placeholder="Body text, styled with Markdown or HTML"></textarea>
 		<div id="output"></div>
 	</section>
-	<script src="js/vendor/md.min.js" type="text/javascript"></script>
+	<script src="js/marked.min.js" type="text/javascript"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<!-- <script src="js/err.min.js" type="text/javascript"></script> -->
 	<script>
 		var textarea = $('#page-content'), output = $('#output'), preview = $('#preview'), toggle = false;
 		textarea.css("min-height", ( $(window).height() - 155 ) + "px");
 		textarea.on("keyup", function() {
-			// $(this).css("height", ( this.value.split("\n").length * 20 + 100 ) + "px");
+			$(this).css("height", ( this.scrollHeight ));
 		});
 		textarea.on("input", function() {
-			output.html(marked($(this).text()));
+			output.html(marked($(this).val()));
 			$("#publish").removeAttr("disabled");
 		});
 		preview.on("click", function() {
@@ -61,8 +60,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		marked.setOptions({breaks:true});
 		$("#publish").click(function() {
 			var title = $("#page-title").val(),
-				markdown = textarea.text(),
-				html = marked(textarea.text());
+				markdown = textarea.val(),
+				html = marked(textarea.val());
 			$.post("./page.php", {
 				title: title,
 				markdown: markdown,
