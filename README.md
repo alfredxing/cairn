@@ -27,11 +27,6 @@ Documentation is for:
 * Theming Cairn
 * More!
 
-Screenshots
------------
-
-*Coming soon for `v2.x.x`*
-
 Installation
 ------------
 
@@ -48,9 +43,20 @@ Contributing
 
 Everyone's welcome to contribute to Cairn. To get started, head over to our [Contibuting wiki page](https://github.com/alfredxing/cairn/wiki/Contributing).
 
+Screenshots
+-----------
+
+#### Editing a page
+![Editing a page](https://bug.lfred.info/putty/cairn_edit.png)
+
+#### Backend dashboard (page listing)
+![Backend dashboard (page listing)](https://bug.lfred.info/putty/cairn_dash.png)
+
+#### Default theme
+![Default theme](https://bug.lfred.info/putty/cairn_theme.png)
 
 Meta
 ----
 
-Currently version <b>`2.2.0`</b> in repository, <b>`2.2.0`</b> in release.  
+Currently version <b>`2.2.0`</b> in repository, <b>`2.2.0`</b> in [release](https://github.com/alfredxing/cairn/releases).  
 This software is licensed according to the [LICENSE.md](https://raw.github.com/alfredxing/cairn/master/LICENSE.md) file.
