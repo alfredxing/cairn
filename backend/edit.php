@@ -27,8 +27,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 				<li><a href="../<?php echo swd(strtolower($page)); ?>" target="_blank">View</a></li>
 			</ul>
 			<ul class="sec">
-				<li><a href="./new" title="New page">New</a></li>
-				<li><a href="./settings" title="Site settings">Settings</a></li>
+				<li><a href="./new.php" title="New page">New</a></li>
+				<li><a href="./settings.php" title="Site settings">Settings</a></li>
 				<li><a href="../" title="Visit site" target="_blank">Site</a></li>
 			</ul>
 		</nav>
