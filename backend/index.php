@@ -13,8 +13,8 @@ $json = json_decode(file_get_contents("../meta/meta.txt"), true);
 		<a href="./" title="Dashboard" id="logo"><i class="icon logo"></i></a>
 		<nav>
 			<ul>
-				<li><a href="./new" title="New page">New</a></li>
-				<li><a href="./settings" title="Site settings">Settings</a></li>
+				<li><a href="./new.php" title="New page">New</a></li>
+				<li><a href="./settings.php" title="Site settings">Settings</a></li>
 				<li><a href="../" title="Visit site" target="_blank">Site</a></li>
 			</ul>
 		</nav>
